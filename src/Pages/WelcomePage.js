@@ -1,7 +1,12 @@
-import { Text } from "react-native";
+import { Text, ImageBackground, View } from "react-native";
+import backgroundImage from '../assets/background.jpg'
 
 function WelcomePage(props) {
-    return ( <Text>Welcome Screen</Text>  );
+    return (
+        <View>
+            <ImageBackground style={{  height: "100%" }} source={backgroundImage} />
+        </View>
+    );
 }
 
 export default WelcomePage;
