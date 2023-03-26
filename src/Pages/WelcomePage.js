@@ -1,4 +1,5 @@
 import { Text, ImageBackground, View, StyleSheet, Image } from "react-native";
+import rootCss from "../rootCss";
 import backgroundImage from '../assets/background.jpg'
 import Logo from '../assets/logo-red.png'
 
@@ -24,11 +25,11 @@ const styles = StyleSheet.create({
     },
     loginButton: {
         height: 70,
-        backgroundColor: '#fc5c65',
+        backgroundColor: rootCss.primaryColor,
     },
     registerButton: {
         height: 70,
-        backgroundColor: '#4ecdc4',
+        backgroundColor: rootCss.secondaryColor,
     },
     logoContainer:{
         position: "absolute",

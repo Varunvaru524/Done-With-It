@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import rootCss from "../rootCss";
 import chair from '../assets/chair.jpg'
 
 function ViewImageScreen(props) {
@@ -27,12 +28,12 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     closeButton: {
-        backgroundColor: '#fc5c65',
+        backgroundColor: rootCss.primaryColor,
         height: 50,
         width: 50
     },
     deleteButton: {
-        backgroundColor: '#4ecdc4',
+        backgroundColor: rootCss.secondaryColor,
         height: 50,
         width: 50
     },
