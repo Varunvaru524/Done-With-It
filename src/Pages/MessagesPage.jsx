@@ -31,7 +31,7 @@ class MessagesPage extends Component {
                         data={data}
                         keyExtractor={data => data.id}
                         renderItem={({ item }) => {
-                            return <ListItem title={item.title} subTitle={item.description} image={item.image}  onPress={()=>console.log('clicked', item)} />
+                            return <ListItem title={item.title} subTitle={item.description} image={item.image}  onPress={()=>console.log('clicked', item)} onDelete={()=>console.log('deteted')} />
                         }}
                         ItemSeparatorComponent={<ListItemSeparetor/>}
                     />

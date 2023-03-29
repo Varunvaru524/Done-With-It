@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { Swipeable } from 'react-native-gesture-handler'
+import ListItemDeleteAction from './ListItemDeleteAction';
 import rootCss from '../rootCss';
 
 class ListItem extends Component {
     render() {
-        const { image, title, subTitle, onPress } = this.props
+        const { image, title, subTitle, onPress, onDelete } = this.props
 
         return (
-            <TouchableHighlight underlayColor={rootCss.lightGrey} onPress={onPress}>
-                <View style={styles.mainContainer}>
-                    <Image source={image} style={styles.image} />
-                    <View style={styles.textContainer} >
-                        <Text style={styles.title} >{title}</Text>
-                        <Text style={styles.subTitle} >{subTitle}</Text>
+            <Swipeable renderRightActions={()=><ListItemDeleteAction onDelete={onDelete}/>}>
+                <TouchableHighlight underlayColor={rootCss.lightGrey} onPress={onPress}>
+                    <View style={styles.mainContainer}>
+                        <Image source={image} style={styles.image} />
+                        <View style={styles.textContainer} >
+                            <Text style={styles.title} >{title}</Text>
+                            <Text style={styles.subTitle} >{subTitle}</Text>
+                        </View>
                     </View>
-                </View>
-            </TouchableHighlight>
+                </TouchableHighlight>
+            </Swipeable>
         );
     }
 }
