@@ -26,7 +26,7 @@ class MessagesPage extends Component {
     render() {
         return (
             <PageLayout>
-                <View>
+                <View style={{height:'100%'}}>
                     <FlatList
                         data={data}
                         keyExtractor={data => data.id}
@@ -34,6 +34,8 @@ class MessagesPage extends Component {
                             return <ListItem title={item.title} subTitle={item.description} image={item.image}  onPress={()=>console.log('clicked', item)} onDelete={()=>console.log('deteted')} />
                         }}
                         ItemSeparatorComponent={<ListItemSeparetor/>}
+                        refreshing={false}
+                        onRefresh={()=>console.log('refreshed')}
                     />
                 </View>
             </PageLayout>
