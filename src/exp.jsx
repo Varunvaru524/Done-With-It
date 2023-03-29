@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ListingDetailsScreen from './Pages/ListingDetailsPage';
 import Img from './assets/jacket.jpg'
+import ListingDetailsPage from './Pages/ListingDetailsPage';
 
 class Experimental extends Component {
     render() { 
-        return (<ListingDetailsScreen image={Img} title='Red Jacket' subTitle='$100' />);
+        return (<ListingDetailsPage image={Img} title='Red Jacket' subTitle='$100' />);
     }
 }
 
