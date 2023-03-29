@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Card from './Components/Card';
-import img from './assets/jacket.jpg'
+import ListingDetailsScreen from './Pages/ListingDetailsPage';
+import Img from './assets/jacket.jpg'
 
 class Experimental extends Component {
     render() { 
-        return (<Card title='Red Jacket For sale' subTitle='$100' image={img}/>);
+        return (<ListingDetailsScreen image={Img} title='Red Jacket' subTitle='$100' />);
     }
 }
 
