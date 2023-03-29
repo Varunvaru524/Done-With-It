@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FlatList, View} from 'react-native';
 import PageLayout from '../Components/PageLayout';
 import ListItem from '../Components/ListItem';
+import ListItemSeparetor from '../Components/ListItemSeparetor';
 import img from '../assets/jacket.jpg'
 
 
@@ -32,6 +33,7 @@ class MessagesPage extends Component {
                         renderItem={({ item }) => {
                             return <ListItem title={item.title} subTitle={item.description} image={item.image} />
                         }}
+                        ItemSeparatorComponent={<ListItemSeparetor/>}
                     />
                 </View>
             </PageLayout>
