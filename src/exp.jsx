@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Img from './assets/jacket.jpg'
-import PageLayout from './Components/PageLayout';
+import MessagesPage from './Pages/MessagesPage';
 
 class Experimental extends Component {
     render() { 
-        return (<PageLayout />);
+        return (<MessagesPage />);
     }
 }
 
