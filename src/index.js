@@ -6,7 +6,7 @@ import Experimental from './exp';
 
 class Index extends Component {
     render() { 
-        return (<ViewImageScreen/>);
+        return (<Experimental/>);
     }
 }
  
