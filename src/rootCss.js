@@ -5,5 +5,6 @@ export default {
     secondaryColor: '#4ecdc4',
     white:'#fff',
     mediumGrey:'#6e6969',
+    lightGrey: '#f8f4f4'
 
 }
