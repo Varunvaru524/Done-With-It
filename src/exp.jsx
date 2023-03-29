@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Button from './Components/AppButton';
+import Card from './Components/Card';
+import img from './assets/jacket.jpg'
 
 class Experimental extends Component {
     render() { 
-        return (<Button onPress={()=>console.log('clicked')}>Login</Button>);
+        return (<Card title='Red Jacket For sale' subTitle='$100' image={img}/>);
     }
 }
 
