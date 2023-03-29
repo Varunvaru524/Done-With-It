@@ -1,13 +1,14 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 import rootCss from "../rootCss";
 import chair from '../assets/chair.jpg'
 
-function ViewImageScreen(props) {
+function ViewImagePage(props) {
     return (
         <View style={styles.theContainer}>
             <View style={styles.buttonContainer}>
-                <View style={styles.closeButton}></View>
-                <View style={styles.deleteButton}></View>
+                <MaterialCommunityIcons name="close" color={rootCss.white} size={30} />
+                <MaterialCommunityIcons name="trash-can-outline" color={rootCss.white} size={30} />
             </View>
             <Image style={styles.chair} resizeMode="contain" source={chair} />
         </View>
@@ -27,20 +28,10 @@ const styles = StyleSheet.create({
         padding: 50,
         position: "absolute",
     },
-    closeButton: {
-        backgroundColor: rootCss.primaryColor,
-        height: 50,
-        width: 50
-    },
-    deleteButton: {
-        backgroundColor: rootCss.secondaryColor,
-        height: 50,
-        width: 50
-    },
     chair: {
         width: '100%',
         height: '100%',
     }
 })
 
-export default ViewImageScreen;
+export default ViewImagePage;
