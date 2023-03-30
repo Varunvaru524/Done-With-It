@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Platform, StatusBar, SafeAreaView } from 'react-native';
+import rootCss from '../rootCss';
 
 class PageLayout extends Component {
     render() {
@@ -14,7 +15,8 @@ class PageLayout extends Component {
 const styles = StyleSheet.create({
     container: {
         paddingTop: (Platform.OS === 'android') && StatusBar.currentHeight,
-        paddingHorizontal: 20,
+        backgroundColor: rootCss.lightGrey,
+        height: '100%'
     }
 })
 

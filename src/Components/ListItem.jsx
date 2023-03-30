@@ -6,13 +6,13 @@ import rootCss from '../rootCss';
 
 class ListItem extends Component {
     render() {
-        const { image, ImageComponent, title, subTitle, onPress, onDelete } = this.props
+        const { image, IconComponent, title, subTitle, onPress, onDelete } = this.props
 
         return (
             <Swipeable renderRightActions={() => <ListItemDeleteAction onDelete={onDelete} />}>
                 <TouchableHighlight underlayColor={rootCss.lightGrey} onPress={onPress}>
                     <View style={styles.mainContainer}>
-                        {ImageComponent}
+                        {IconComponent}
                         {image && <Image source={image} style={styles.image} />}
                         <View style={styles.textContainer} >
                             <Text style={styles.title} >{title}</Text>
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         padding: 15,
+        backgroundColor:rootCss.white
     },
     image: {
         width: 70,
