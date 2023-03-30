@@ -6,16 +6,17 @@ import rootCss from '../rootCss';
 
 class ListItem extends Component {
     render() {
-        const { image, title, subTitle, onPress, onDelete } = this.props
+        const { image, ImageComponent, title, subTitle, onPress, onDelete } = this.props
 
         return (
-            <Swipeable renderRightActions={()=><ListItemDeleteAction onDelete={onDelete}/>}>
+            <Swipeable renderRightActions={() => <ListItemDeleteAction onDelete={onDelete} />}>
                 <TouchableHighlight underlayColor={rootCss.lightGrey} onPress={onPress}>
                     <View style={styles.mainContainer}>
-                        <Image source={image} style={styles.image} />
+                        {ImageComponent}
+                        {image && <Image source={image} style={styles.image} />}
                         <View style={styles.textContainer} >
                             <Text style={styles.title} >{title}</Text>
-                            <Text style={styles.subTitle} >{subTitle}</Text>
+                            {subTitle && <Text style={styles.subTitle} >{subTitle}</Text>}
                         </View>
                     </View>
                 </TouchableHighlight>
@@ -28,21 +29,22 @@ const styles = StyleSheet.create({
     mainContainer: {
         display: 'flex',
         flexDirection: 'row',
-        padding: 15
+        padding: 15,
     },
     image: {
-        width: 100,
-        height: 100,
+        width: 70,
+        height: 70,
         borderRadius: 50
     },
     textContainer: {
         width: "100%",
-        padding: 20
+        paddingLeft: 20,
+        justifyContent: 'center'
     },
     title: {
         fontSize: 25,
         fontWeight: 'bold',
-        marginBottom: 10
+        marginBottom: 7,
     },
     subTitle: {
         color: rootCss.mediumGrey,
