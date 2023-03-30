@@ -4,9 +4,11 @@ import rootCss from '../rootCss';
 
 class PageLayout extends Component {
     render() {
+        const {style} =   this.props
+
         return (
             <SafeAreaView>
-                <View style={styles.container}>{this.props.children}</View>
+                <View style={[styles.container, style]}>{this.props.children}</View>
             </SafeAreaView>
         );
     }
