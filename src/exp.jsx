@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import PageLayout from './Components/PageLayout';
+import AppTextInput from './Components/AppTextInput';
 
 class Experimental extends Component {
-    render() { 
+    render() {
         return (
             <PageLayout>
-                <Text>sdad</Text>
+                <AppTextInput icon='email' placeholder='User Name' />
             </PageLayout>
         );
     }
