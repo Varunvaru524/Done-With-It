@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Img from './assets/jacket.jpg'
-import ListingsPage from './Pages/ListingsPage';
+import { Text } from 'react-native';
+import PageLayout from './Components/PageLayout';
 
 class Experimental extends Component {
     render() { 
         return (
-            <ListingsPage/>
+            <PageLayout>
+                <Text>sdad</Text>
+            </PageLayout>
         );
     }
 }
-
 
 export default Experimental;
