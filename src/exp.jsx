@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import PageLayout from './Components/PageLayout';
-import AppTextInput from './Components/AppTextInput';
+import LoginPage from './Pages/LoginPage';
 
 class Experimental extends Component {
+    state = {
+        valueChange: false
+    }
     render() {
         return (
-            <PageLayout>
-                <AppTextInput icon='email' placeholder='User Name' />
-            </PageLayout>
+            <LoginPage/>
         );
     }
 }

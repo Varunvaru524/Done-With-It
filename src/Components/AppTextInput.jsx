@@ -5,11 +5,11 @@ import rootCss from '../rootCss';
 
 class AppTextInput extends Component {
     render() {
-        const { icon, placeholder } = this.props
+        const { icon, placeholder, ...rest } = this.props
         return (
             <View style={styles.container} >
                 <MaterialCommunityIcons style={styles.icon} name={icon} size={20} color={rootCss.mediumGrey} />
-                <TextInput style={styles.textInput} placeholder={placeholder} />
+                <TextInput style={styles.textInput} placeholder={placeholder} {...rest} />
             </View>
         );
     }
