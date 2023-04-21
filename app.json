@@ -1,14 +1,14 @@
 {
   "expo": {
     "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "slug": "done-with-it",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -21,10 +21,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.varunvaru524.donewithit"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "093b7ad9-b92a-4b05-bef1-9cdb7e33fc5b"
+      }
+    },
+    "owner": "varunvaru524",
+    "notification": {
+      "iosDisplayInForeground": true
     }
   }
 }
