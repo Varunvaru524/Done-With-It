@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.varunvaru524.donewithit"
     },
     "android": {
       "adaptiveIcon": {
@@ -35,6 +36,12 @@
     "owner": "varunvaru524",
     "notification": {
       "iosDisplayInForeground": true
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/093b7ad9-b92a-4b05-bef1-9cdb7e33fc5b"
     }
   }
 }
