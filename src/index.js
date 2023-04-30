@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Experimental from './exp';
 import { NavigationContainer } from '@react-navigation/native'
+import WelcomeScreenRoute from './routes/WelcomeScreenRoute';
 
+
+import Experimental from './exp';
 
 class Index extends Component {
     render() {
         return (
             <NavigationContainer>
-                <Experimental />
+                <WelcomeScreenRoute/>
+                {/* <Experimental/> */}
             </NavigationContainer>
         );
     }

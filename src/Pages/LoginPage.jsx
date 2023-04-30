@@ -38,6 +38,10 @@ class LoginPage extends Component {
                     />
                     <AppButton onPress={() => this.handleSublit()} >Login</AppButton>
                 </View>
+                <View style={styles.registerContainer}>
+                    <Text style={styles.registerText}>Don't have an account?</Text>
+                    <AppButton onPress={() => this.props.navigation.navigate('registerScreen')} bgColor='secondary'>Register</AppButton>
+                </View>
             </PageLayout>
 
         );
@@ -52,8 +56,18 @@ const styles = StyleSheet.create({
         marginBottom: 50,
         alignSelf: 'center'
     },
-    inputContainer:{
-        padding:10
+    inputContainer: {
+        padding: 10
+    },
+    registerText:{
+        textAlign:'center',
+        fontSize:20
+    },
+    registerContainer: {
+        position:'absolute',
+        width:'100%',
+        bottom:20,
+        padding:10,
     }
 })
 

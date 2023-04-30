@@ -8,7 +8,6 @@ import LoginPage from './Pages/LoginPage';
 import MessagesPage from './Pages/MessagesPage';
 import ViewImagePage from './Pages/ViewImagePage';
 import WelcomePage from './Pages/WelcomePage';
-
 import WelcomeScreenRoute from './routes/WelcomeScreenRoute';
 
 
@@ -18,10 +17,7 @@ class Experimental extends Component {
 
     render() {
         return (
-            <PageLayout>
-                <WelcomeScreenRoute/>
-                {/* <Text>Exp</Text> */}
-            </PageLayout>
+                <Text>Exp</Text>
         );
     }
 }
