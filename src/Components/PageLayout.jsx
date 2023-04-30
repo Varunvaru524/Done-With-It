@@ -7,7 +7,7 @@ class PageLayout extends Component {
         const {style, ...rest} =   this.props
 
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{backgroundColor: rootCss.lightGrey}}>
                 <View style={[styles.container, style]} {...rest} >{this.props.children}</View>
             </SafeAreaView>
         );
