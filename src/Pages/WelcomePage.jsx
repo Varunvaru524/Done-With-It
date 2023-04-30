@@ -1,11 +1,10 @@
 import { Text, ImageBackground, View, StyleSheet, Image } from "react-native";
 import AppButton from "../Components/AppButton";
-import rootCss from "../rootCss";
 import backgroundImage from '../assets/background.jpg'
 import Logo from '../assets/logo-red.png'
 
 
-function WelcomePage(props) {
+function WelcomePage({navigation}) {
     return (
         <ImageBackground blurRadius={5} style={styles.bgImage} source={backgroundImage}>
             <View style={styles.logoContainer}>
@@ -13,8 +12,8 @@ function WelcomePage(props) {
                 <Text style={styles.tagline}>Sell What You Don't Need</Text>
             </View>
             <View style={styles.buttonContainer}>
-                <AppButton>Login</AppButton>
-                <AppButton bgColor='secondary'>Register</AppButton>
+                <AppButton onPress={()=>navigation.navigate('loginScreen')}>Login</AppButton>
+                <AppButton onPress={()=>navigation.navigate('registerScreen')} bgColor='secondary'>Register</AppButton>
             </View>
         </ImageBackground>
     );

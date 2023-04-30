@@ -25,7 +25,10 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     text: {
-        color: rootCss.white
+        color: rootCss.white,
+        fontSize: 20,
+        fontWeight: "500"
+
     }
 })
 

@@ -1,8 +1,6 @@
 import React, { Component, useRef } from 'react';
-import { Text } from 'react-native';
 import PageLayout from './Components/PageLayout';
-
-
+import WelcomeScreenRoute from './routes/WelcomeScreenRoute';
 
 
 class Experimental extends Component {
@@ -10,7 +8,7 @@ class Experimental extends Component {
     render() {
         return (
             <PageLayout>
-                <Text>Exp</Text>
+                <WelcomeScreenRoute/>
             </PageLayout>
         );
     }
