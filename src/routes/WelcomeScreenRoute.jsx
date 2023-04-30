@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 class WelcomeScreenRoute extends Component {
   render() {
     return (
-      <Stack.Navigator >
+      <Stack.Navigator screenOptions={{headerShown:false}} >
         <Stack.Screen name='welcomeScreen' component={WelcomePage} />
         <Stack.Screen name='registerScreen' component={RegistrationPage} />
         <Stack.Screen name='loginScreen' component={LoginPage} />

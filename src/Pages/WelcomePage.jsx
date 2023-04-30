@@ -23,11 +23,9 @@ const styles = StyleSheet.create({
     bgImage: {
         height: "100%",
         display: 'flex',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
     },
     logoContainer: {
-        position: "absolute",
-        top: 100,
         width: "100%",
         display: "flex",
         alignItems: "center"
@@ -38,11 +36,12 @@ const styles = StyleSheet.create({
     },
     tagline:{
         marginTop:20,
-        fontWeight:"bold",
+        fontWeight:"400",
         fontSize:25
     },
     buttonContainer: {
         padding: 10,
+        marginTop:50
     }
 })
 

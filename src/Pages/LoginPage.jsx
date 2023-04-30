@@ -12,7 +12,6 @@ class LoginPage extends Component {
         password: ''
     }
 
-
     handleSublit() {
         console.log(this.state);
     }
@@ -26,15 +25,17 @@ class LoginPage extends Component {
                         icon='email'
                         placeholder="Enter Email"
                         autoCapitalize='none'
-                        testContentType='emailAddress'
+                        textContentType='emailAddress'
                         onChangeText={(value) => this.setState({ email: value })}
+                        value={this.state.email}
                     />
                     <AppTextInput
                         icon='lock'
                         placeholder="Enter Passowrd"
-                        testContentType='password'
+                        textContentType='password'
                         secureTextEntry
                         onChangeText={(value) => this.setState({ password: value })}
+                        value={this.state.password}
                     />
                     <AppButton onPress={() => this.handleSublit()} >Login</AppButton>
                 </View>
@@ -43,7 +44,6 @@ class LoginPage extends Component {
                     <AppButton onPress={() => this.props.navigation.navigate('registerScreen')} bgColor='secondary'>Register</AppButton>
                 </View>
             </PageLayout>
-
         );
     }
 }
@@ -52,22 +52,22 @@ const styles = StyleSheet.create({
     image: {
         width: 80,
         height: 80,
-        marginTop: 50,
+        marginTop: 60,
         marginBottom: 50,
         alignSelf: 'center'
     },
     inputContainer: {
         padding: 10
     },
-    registerText:{
-        textAlign:'center',
-        fontSize:20
+    registerText: {
+        textAlign: 'center',
+        fontSize: 20
     },
     registerContainer: {
-        position:'absolute',
-        width:'100%',
-        bottom:20,
-        padding:10,
+        position: 'absolute',
+        width: '100%',
+        bottom: 20,
+        padding: 10,
     }
 })
 
