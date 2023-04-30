@@ -15,19 +15,18 @@ class AppButton extends Component {
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        height: 40,
         width: "100%",
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
         marginVertical: 10,
+        padding:10
     },
     text: {
         color: rootCss.white,
         fontSize: 20,
         fontWeight: "500"
-
     }
 })
 

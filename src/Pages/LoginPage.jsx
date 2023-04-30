@@ -7,13 +7,13 @@ import AppButton from '../Components/AppButton';
 
 class LoginPage extends Component {
 
-    state={
-        email:'',
-        password:''
+    state = {
+        email: '',
+        password: ''
     }
 
 
-    handleSublit(){
+    handleSublit() {
         console.log(this.state);
     }
 
@@ -21,23 +21,23 @@ class LoginPage extends Component {
         return (
             <PageLayout>
                 <Image source={logo} style={styles.image} />
-                <AppTextInput
-                icon='email'
-                placeholder="Enter Email"
-                autoCapitalize ='none'
-                testContentType='emailAddress'
-                name='email'
-                onChangeText={(value)=>this.setState({email:value})}
-                />
-                <AppTextInput
-                icon='lock'
-                placeholder="Enter Passowrd"
-                testContentType='password'
-                secureTextEntry
-                onChangeText={(value)=>this.setState({password:value})}
-                name='password'
-                />
-                <AppButton onPress={()=>this.handleSublit()} >Login</AppButton>
+                <View style={styles.inputContainer}>
+                    <AppTextInput
+                        icon='email'
+                        placeholder="Enter Email"
+                        autoCapitalize='none'
+                        testContentType='emailAddress'
+                        onChangeText={(value) => this.setState({ email: value })}
+                    />
+                    <AppTextInput
+                        icon='lock'
+                        placeholder="Enter Passowrd"
+                        testContentType='password'
+                        secureTextEntry
+                        onChangeText={(value) => this.setState({ password: value })}
+                    />
+                    <AppButton onPress={() => this.handleSublit()} >Login</AppButton>
+                </View>
             </PageLayout>
 
         );
@@ -51,6 +51,9 @@ const styles = StyleSheet.create({
         marginTop: 50,
         marginBottom: 50,
         alignSelf: 'center'
+    },
+    inputContainer:{
+        padding:10
     }
 })
 
