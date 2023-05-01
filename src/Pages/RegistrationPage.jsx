@@ -32,6 +32,7 @@ class RegistrationPage extends Component {
 
       const token = 'Token From the backend'
       await secureStorage.setItemAsync('authToken', token)
+      this.props.onLogin()
       console.log(await secureStorage.getItemAsync('authToken'));
     }
     else {

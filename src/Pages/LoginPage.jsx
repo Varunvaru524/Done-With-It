@@ -25,6 +25,7 @@ class LoginPage extends Component {
 
             const token = 'Token From the backend'
             await secureStorage.setItemAsync('authToken', token)
+            this.props.onLogin()
             console.log(await secureStorage.getItemAsync('authToken'));
         }
         else this.setState({ errors: 'Email or Password is incorrect' })

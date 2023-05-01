@@ -11,8 +11,8 @@ class WelcomeScreenRoute extends Component {
     return (
       <Stack.Navigator screenOptions={{headerShown:false}} >
         <Stack.Screen name='welcomeScreen' component={WelcomePage} />
-        <Stack.Screen name='registerScreen' component={RegistrationPage} />
-        <Stack.Screen name='loginScreen' component={LoginPage} />
+        <Stack.Screen name='registerScreen'>{()=><RegistrationPage onLogin={this.props.onLogin}/>}</Stack.Screen>
+        <Stack.Screen name='loginScreen' >{()=><LoginPage onLogin={this.props.onLogin}/>}</Stack.Screen>
       </Stack.Navigator>
     );
   }
