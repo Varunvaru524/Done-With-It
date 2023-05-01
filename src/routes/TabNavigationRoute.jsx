@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import {MaterialCommunityIcons} from '@expo/vector-icons'
 import AccountPage from '../Pages/AccountPage';
 import ListingsPage from '../Pages/ListingsPage';
 
@@ -10,10 +10,31 @@ const Tab = createBottomTabNavigator()
 class TabNavigationRoute extends Component {
   render() {
     return (
-      <Tab.Navigator>
-        <Tab.Screen name='home' component={ListingsPage}/>
-        <Tab.Screen name='addListing' component={ListingsPage}/>
-        <Tab.Screen name='account' component={AccountPage}/>
+      <Tab.Navigator screenOptions={{headerShown:false,}}>
+        <Tab.Screen
+        name='home'
+        component={ListingsPage}
+        options={()=>({
+          title:'Home',
+          tabBarIcon:({color, size})=><MaterialCommunityIcons name='home' color={color} size={size}/>
+        })}
+        />
+        <Tab.Screen
+        name='addNewListing'
+        component={ListingsPage}
+        options={()=>({
+          title:'New Post',
+          tabBarIcon:({color, size})=><MaterialCommunityIcons name='plus' color={color} size={size}/>
+        })}
+        />
+        <Tab.Screen
+        name='account'
+        component={AccountPage}
+        options={()=>({
+          title:'Account',
+          tabBarIcon:({color, size})=><MaterialCommunityIcons name='account' color={color} size={size}/>
+        })}
+        />
       </Tab.Navigator>
     );
   }
