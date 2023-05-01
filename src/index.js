@@ -22,8 +22,8 @@ class Index extends Component {
     render() {
         return (
             <NavigationContainer>
-                {!this.state.token&&<WelcomeScreenRoute/>}
-                {this.state.token&&<TabNavigationRoute/>}
+                {!this.state.token&&<WelcomeScreenRoute />}
+                {this.state.token&&<TabNavigationRoute onLogout={()=>this.setState({token:false})}/>}
                 {/* <Experimental/> */}
             </NavigationContainer>
         );

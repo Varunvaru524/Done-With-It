@@ -30,12 +30,11 @@ class TabNavigationRoute extends Component {
         />
         <Tab.Screen
         name='account'
-        component={AccountPage}
         options={()=>({
           title:'Account',
           tabBarIcon:({color, size})=><MaterialCommunityIcons name='account' color={color} size={size}/>
         })}
-        />
+        >{()=><AccountPage onLogout={this.props.onLogout}/>}</Tab.Screen>
       </Tab.Navigator>
     );
   }
