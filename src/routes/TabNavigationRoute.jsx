@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import AccountPage from '../Pages/AccountPage';
 import ListingsPage from '../Pages/ListingsPage';
+import NewPostPage from '../Pages/NewPostPage';
 
 
 const Tab = createBottomTabNavigator()
@@ -21,7 +22,7 @@ class TabNavigationRoute extends Component {
         />
         <Tab.Screen
         name='addNewListing'
-        component={ListingsPage}
+        component={NewPostPage}
         options={()=>({
           title:'New Post',
           tabBarIcon:({color, size})=><MaterialCommunityIcons name='plus' color={color} size={size}/>

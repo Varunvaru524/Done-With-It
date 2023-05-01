@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native'
-import WelcomeScreenRoute from './routes/WelcomeScreenRoute';
 import * as secureStorage from 'expo-secure-store'
+import WelcomeScreenRoute from './routes/WelcomeScreenRoute';
+import TabNavigationRoute from './routes/TabNavigationRoute';
 
 
 import Experimental from './exp';
@@ -21,9 +22,9 @@ class Index extends Component {
     render() {
         return (
             <NavigationContainer>
-                {/* {!this.state.token&&<WelcomeScreenRoute/>} */}
-                {/* {this.state.token&&<Text>The</Text>} */}
-                <Experimental/>
+                {!this.state.token&&<WelcomeScreenRoute/>}
+                {this.state.token&&<TabNavigationRoute/>}
+                {/* <Experimental/> */}
             </NavigationContainer>
         );
     }
