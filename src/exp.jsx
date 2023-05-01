@@ -9,6 +9,7 @@ import MessagesPage from './Pages/MessagesPage';
 import ViewImagePage from './Pages/ViewImagePage';
 import WelcomePage from './Pages/WelcomePage';
 import WelcomeScreenRoute from './routes/WelcomeScreenRoute';
+import TabNavigationRoute from './routes/TabNavigationRoute';
 
 
 
@@ -17,7 +18,7 @@ class Experimental extends Component {
 
     render() {
         return (
-                <Text>Exp</Text>
+                <TabNavigationRoute/>
         );
     }
 }
