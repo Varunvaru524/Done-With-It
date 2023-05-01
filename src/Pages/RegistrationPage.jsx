@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions, Platform } from 'react-native';
 import * as secureStorage from 'expo-secure-store'
-import rootCss from '../rootCss';
 import { email, password } from '../utilities/regex'
+import rootCss from '../rootCss';
 import PageLayout from '../Components/PageLayout';
-import logo from '../assets/logo-red.png'
 import AppTextInput from '../Components/AppTextInput';
 import AppButton from '../Components/AppButton';
+import logo from '../assets/logo-red.png'
 
 
 class RegistrationPage extends Component {
@@ -22,7 +22,7 @@ class RegistrationPage extends Component {
   }
 
   async handleSublit() {
-    this.setState({errors:{}})
+    this.setState({ errors: {} })
     const isValidEmail = email.test(this.state.email)
     const isValidPassword = password.test(this.state.password)
     const isValidConfirmPassword = this.state.password === this.state.confirmPassword
@@ -38,15 +38,15 @@ class RegistrationPage extends Component {
       let updatedErrors = this.state.errors
       if (!isValidEmail) {
         updatedErrors.email = 'Email is not valid'
-        this.setState({errors: updatedErrors})
+        this.setState({ errors: updatedErrors })
       }
       if (!isValidPassword) {
         updatedErrors.password = 'Password should have 5 characters'
-        this.setState({errors: updatedErrors})
+        this.setState({ errors: updatedErrors })
       }
       if (!isValidConfirmPassword) {
         updatedErrors.confirmPassword = 'Password do not match'
-        this.setState({errors: updatedErrors})
+        this.setState({ errors: updatedErrors })
       }
     }
   }
@@ -115,7 +115,8 @@ const styles = StyleSheet.create({
   loginContainer: {
     position: 'absolute',
     width: '100%',
-    bottom: 20,
+    bottom: Platform.OS == 'ios' ? 0 : null,
+    top: Platform.OS == 'android' ? Dimensions.get('window').height - 120 : null,
     padding: 10,
   },
   loginText: {

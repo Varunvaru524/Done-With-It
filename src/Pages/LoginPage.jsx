@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View, Dimensions, Platform } from 'react-native';
 import * as secureStorage from 'expo-secure-store'
-import rootCss from '../rootCss';
 import { email, password } from '../utilities/regex'
+import rootCss from '../rootCss';
 import AppTextInput from '../Components/AppTextInput';
-import logo from '../assets/logo-red.png'
 import PageLayout from '../Components/PageLayout';
 import AppButton from '../Components/AppButton';
+import logo from '../assets/logo-red.png'
 
 class LoginPage extends Component {
 
@@ -19,13 +19,13 @@ class LoginPage extends Component {
     async handleSublit() {
         const isValidEmail = email.test(this.state.email)
         const isValidPassword = password.test(this.state.password)
-        
+
         if (isValidEmail && isValidPassword) {
             // Calling backend and storing the token in secure storage and logging in
 
             const token = 'Token From the backend'
-            await secureStorage.setItemAsync('authToken',token)
-            console.log( await secureStorage.getItemAsync('authToken'));
+            await secureStorage.setItemAsync('authToken', token)
+            console.log(await secureStorage.getItemAsync('authToken'));
         }
         else this.setState({ errors: 'Email or Password is incorrect' })
     }
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     errors: {
         textAlign: 'center',
         fontSize: 20,
-        fontWeight:'400',
+        fontWeight: '400',
         color: rootCss.error
     },
     registerText: {
@@ -87,7 +87,8 @@ const styles = StyleSheet.create({
     registerContainer: {
         position: 'absolute',
         width: '100%',
-        bottom: 20,
+        bottom:Platform.OS == 'ios'?0:null,
+        top: Platform.OS == 'android'?Dimensions.get('window').height - 120:null ,
         padding: 10,
     }
 })
