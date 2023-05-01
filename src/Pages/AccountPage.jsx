@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import rootCss from '../rootCss';
 import * as secureStorage from 'expo-secure-store'
+import * as updates from 'expo-updates'
 import PageLayout from '../Components/PageLayout';
 import ListItem from '../Components/ListItem';
 import ListItemSeparetor from '../Components/ListItemSeparetor';
@@ -19,6 +20,7 @@ class AccountPage extends Component {
     
     async handleLogout(){
         await secureStorage.deleteItemAsync('authToken')
+        await updates.reloadAsync()
         console.log('logout');
     }
 
