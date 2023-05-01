@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import * as secureStorage from 'expo-secure-store'
+import rootCss from '../rootCss';
+import { email, password } from '../utilities/regex'
 import AppTextInput from '../Components/AppTextInput';
 import logo from '../assets/logo-red.png'
 import PageLayout from '../Components/PageLayout';
@@ -9,11 +12,22 @@ class LoginPage extends Component {
 
     state = {
         email: '',
-        password: ''
+        password: '',
+        errors: ''
     }
 
-    handleSublit() {
-        console.log(this.state);
+    async handleSublit() {
+        const isValidEmail = email.test(this.state.email)
+        const isValidPassword = password.test(this.state.password)
+        
+        if (isValidEmail && isValidPassword) {
+            // Calling backend and storing the token in secure storage and logging in
+
+            const token = 'Token From the backend'
+            await secureStorage.setItemAsync('authToken',token)
+            console.log( await secureStorage.getItemAsync('authToken'));
+        }
+        else this.setState({ errors: 'Email or Password is incorrect' })
     }
 
     render() {
@@ -31,12 +45,13 @@ class LoginPage extends Component {
                     />
                     <AppTextInput
                         icon='lock'
-                        placeholder="Enter Passowrd"
+                        placeholder="Enter Password"
                         textContentType='password'
                         secureTextEntry
                         onChangeText={(value) => this.setState({ password: value })}
                         value={this.state.password}
                     />
+                    {this.state.errors && <Text style={styles.errors}>{this.state.errors}</Text>}
                     <AppButton onPress={() => this.handleSublit()} >Login</AppButton>
                 </View>
                 <View style={styles.registerContainer}>
@@ -58,6 +73,12 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         padding: 10
+    },
+    errors: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight:'400',
+        color: rootCss.error
     },
     registerText: {
         textAlign: 'center',
