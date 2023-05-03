@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, View} from 'react-native';
+import { FlatList, View } from 'react-native';
 import PageLayout from '../Components/PageLayout';
 import ListItem from '../Components/ListItem';
 import ListItemSeparetor from '../Components/ListItemSeparetor';
@@ -26,16 +26,16 @@ class MessagesPage extends Component {
     render() {
         return (
             <PageLayout>
-                <View style={{height:'100%'}}>
+                <View style={{ height: '100%' }}>
                     <FlatList
                         data={data}
                         keyExtractor={data => data.id}
                         renderItem={({ item }) => {
-                            return <ListItem title={item.title} subTitle={item.description} image={item.image}  onPress={()=>console.log('clicked', item)} onDelete={()=>console.log('deteted')} />
+                            return <ListItem title={item.title} subTitle={item.description} image={item.image} onPress={() => console.log('clicked', item)} onDelete={() => console.log('deteted')} />
                         }}
-                        ItemSeparatorComponent={<ListItemSeparetor/>}
+                        ItemSeparatorComponent={<ListItemSeparetor />}
                         refreshing={false}
-                        onRefresh={()=>console.log('refreshed')}
+                        onRefresh={() => console.log('refreshed')}
                     />
                 </View>
             </PageLayout>
