@@ -10,9 +10,9 @@ const Stack = createStackNavigator()
 function AccountPageRoute(props) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name='accountPage'>{({...rest})=><AccountPage {...rest} onLogout={props.onLogout}/>}</Stack.Screen>
+      <Stack.Screen name='accountPage' options={{headerShown:false}}>{({...rest})=><AccountPage {...rest} onLogout={props.onLogout}/>}</Stack.Screen>
       <Stack.Screen name='myListings' options={{title:'My Listings'}} component={MyListingsPage}/>
-      <Stack.Screen name='messages' component={MessagesPage} />
+      <Stack.Screen name='messages' options={{title:'Messages'}} component={MessagesPage} />
     </Stack.Navigator>
   );
 }
