@@ -15,7 +15,7 @@ class ListingsPage extends Component {
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('listDetailsPage', item)}>
-                            <Card image={item.image} title={item.title} subTitle={'$' + item.subTitle} />
+                            <Card image={item.image} title={item.title} subTitle={'Rs ' + item.subTitle} />
                         </TouchableOpacity>
                     )}
                 />
