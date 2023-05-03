@@ -10,7 +10,7 @@ function HomePageRoute(props) {
   return (
     <Stack.Navigator>
       <Stack.Screen options={{headerShown:false}} name='listingsPage' component={ListingsPage}/>
-      <Stack.Screen options={{title:''}} name='listDetailsPage' component={ListingDetailsPage}/>
+      <Stack.Screen options={{title:'', headerBackTitleVisible:false}} name='listDetailsPage' component={ListingDetailsPage}/>
     </Stack.Navigator>
   );
 }

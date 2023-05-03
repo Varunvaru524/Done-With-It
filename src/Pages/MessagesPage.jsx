@@ -9,13 +9,13 @@ import img from '../assets/jacket.jpg'
 const data = [
     {
         id: 1,
-        title: 'title1',
+        title: 'Harmani',
         description: 'Description',
         image: img
     },
     {
         id: 2,
-        title: 'title2',
+        title: 'Chris',
         description: 'Description',
         image: img
     },

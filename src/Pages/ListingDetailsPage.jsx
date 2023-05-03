@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import ListItem from '../Components/ListItem';
 import rootCss from '../rootCss';
-import img from '../assets/jacket.jpg'
+import img from '../assets/profilePic.png'
 
 class ListingDetailsPage extends Component {
     render() {
@@ -15,7 +15,7 @@ class ListingDetailsPage extends Component {
                     <Text style={styles.title} >{title}</Text>
                     <Text style={styles.subTitle} >{subTitle}</Text>
                 </View>
-                    <ListItem image={img} title='Varun' subTitle="5 Listing" />
+                    <ListItem image={img} title='Varun' subTitle="3 Listing" />
             </View>
         );
     }

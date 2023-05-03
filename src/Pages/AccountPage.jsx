@@ -6,7 +6,7 @@ import PageLayout from '../Components/PageLayout';
 import ListItem from '../Components/ListItem';
 import ListItemSeparetor from '../Components/ListItemSeparetor';
 import Icon from '../Components/Icon';
-import image from '../assets/jacket.jpg'
+import image from '../assets/profilePic.png'
 
 
 class AccountPage extends Component {
