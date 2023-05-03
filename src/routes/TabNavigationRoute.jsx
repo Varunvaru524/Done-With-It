@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
-import AccountPage from '../Pages/AccountPage';
+import AccountPageRoute from './AccountPageRoute';
 import ListingsPage from '../Pages/ListingsPage';
 import NewPostPage from '../Pages/NewPostPage';
 
@@ -34,7 +34,7 @@ class TabNavigationRoute extends Component {
           title:'Account',
           tabBarIcon:({color, size})=><MaterialCommunityIcons name='account' color={color} size={size}/>
         })}
-        >{()=><AccountPage onLogout={this.props.onLogout}/>}</Tab.Screen>
+        >{()=><AccountPageRoute onLogout={this.props.onLogout}/>}</Tab.Screen>
       </Tab.Navigator>
     );
   }
