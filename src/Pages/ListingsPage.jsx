@@ -16,7 +16,7 @@ let data = [
     },
     {
         id: 2,
-        title: 'Beautifun Couch',
+        title: 'Beautiful Couch',
         subTitle: '1000',
         image: couch
     }

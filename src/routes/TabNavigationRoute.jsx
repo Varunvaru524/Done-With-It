@@ -25,7 +25,7 @@ class TabNavigationRoute extends Component {
         component={NewPostPage}
         options={()=>({
           title:'New Post',
-          tabBarIcon:({color, size})=><MaterialCommunityIcons name='plus' color={color} size={size}/>
+          tabBarIcon:({color, size})=><MaterialCommunityIcons name='plus-circle' color={color} size={size}/>
         })}
         />
         <Tab.Screen

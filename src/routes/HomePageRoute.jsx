@@ -9,8 +9,8 @@ const Stack = createStackNavigator()
 function HomePageRoute(props) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name='listingsPage' component={ListingsPage}/>
-      <Stack.Screen name='listDetailsPage' component={ListingDetailsPage}/>
+      <Stack.Screen options={{headerShown:false}} name='listingsPage' component={ListingsPage}/>
+      <Stack.Screen options={{title:''}} name='listDetailsPage' component={ListingDetailsPage}/>
     </Stack.Navigator>
   );
 }

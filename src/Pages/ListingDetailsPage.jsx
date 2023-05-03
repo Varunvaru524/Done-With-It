@@ -6,16 +6,16 @@ import img from '../assets/jacket.jpg'
 
 class ListingDetailsPage extends Component {
     render() {
-        const { title, subTitle } = this.props
+        const { title, subTitle,image } = this.props.route.params
 
         return (
             <View style={styles.mainContainer}>
-                <Image style={styles.image} source={img} />
+                <Image style={styles.image} source={image} />
                 <View style={styles.detailsContainer}>
                     <Text style={styles.title} >{title}</Text>
                     <Text style={styles.subTitle} >{subTitle}</Text>
-                    <ListItem image={img} title='Mosh Hamedani' subTitle="5 Listing" />
                 </View>
+                    <ListItem image={img} title='Varun' subTitle="5 Listing" />
             </View>
         );
     }
@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
         color: rootCss.secondaryColor,
         fontWeight: 'bold',
         marginVertical: 10,
-        paddingBottom:30
     }
 })
 
