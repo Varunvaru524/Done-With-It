@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import AccountPageRoute from './AccountPageRoute';
-import ListingsPage from '../Pages/ListingsPage';
+import HomePageRoute from './HomePageRoute';
 import NewPostPage from '../Pages/NewPostPage';
 
 
@@ -11,10 +11,10 @@ const Tab = createBottomTabNavigator()
 class TabNavigationRoute extends Component {
   render() {
     return (
-      <Tab.Navigator screenOptions={{headerShown:false,}}>
+      <Tab.Navigator screenOptions={{headerShown:false}}>
         <Tab.Screen
         name='home'
-        component={ListingsPage}
+        component={HomePageRoute}
         options={()=>({
           title:'Home',
           tabBarIcon:({color, size})=><MaterialCommunityIcons name='home' color={color} size={size}/>
