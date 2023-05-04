@@ -2,7 +2,7 @@ import jacket from '../assets/jacket.jpg'
 import couch from '../assets/couch.jpg'
 import chair from '../assets/chair.jpg'
 
-export default [
+const dataSet = [
   {
       id: 1,
       title: 'Red Jacked',
@@ -25,3 +25,10 @@ export default [
       image: chair
   }
 ]
+
+export function data(params) {
+    return dataSet
+}
+export function addData(newPost) {
+    dataSet.unshift(newPost)
+}
