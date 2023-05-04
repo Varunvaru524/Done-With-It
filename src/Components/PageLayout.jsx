@@ -16,7 +16,7 @@ class PageLayout extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: (Platform.OS === 'android') ? StatusBar.currentHeight + 20 : 20,
+        paddingTop: (Platform.OS === 'android') ? StatusBar.currentHeight : 0,
         backgroundColor: rootCss.lightGrey,
         height: '100%'
     }

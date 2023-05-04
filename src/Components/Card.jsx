@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     mainContainer:{
         backgroundColor: rootCss.white,
         borderRadius:20,
-        marginBottom:20,
+        marginTop:20,
         overflow:'hidden',
     },
     image:{

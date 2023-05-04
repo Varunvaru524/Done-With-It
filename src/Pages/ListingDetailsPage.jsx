@@ -3,6 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ListItem from '../Components/ListItem';
 import rootCss from '../rootCss';
 import img from '../assets/profilePic.png'
+import data from '../utilities/data';
 
 class ListingDetailsPage extends Component {
     render() {
@@ -18,7 +19,7 @@ class ListingDetailsPage extends Component {
                         <Text style={styles.description}>Description</Text>
                         <Text>{'      '+description}</Text>
                     </View>
-                    <ListItem image={img} title='Varun' subTitle="3 Listing" />
+                    <ListItem image={img} title='Varun' subTitle={`${data.length} Listings`} />
                 </View>
             </ScrollView>
         );
