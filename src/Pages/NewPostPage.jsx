@@ -6,12 +6,17 @@ import rootCss from '../rootCss';
 import PageLayout from '../Components/PageLayout';
 import AppTextInput from '../Components/AppTextInput';
 import AppButton from '../Components/AppButton';
+import {addData} from '../utilities/data'
 
 
 class NewPostPage extends Component {
   state = {
     permission: null,
-    uri: []
+    uri: [],
+    title:'',
+    subTitle:'',
+    description:'',
+    errors:null
   }
 
   async handleImages() {
@@ -35,6 +40,11 @@ class NewPostPage extends Component {
     }
   }
 
+  handleSubmit(){
+    addData(this.state)
+      this.props.navigation.navigate('listingsPage')
+  }
+
   render() {
     return (
       <PageLayout>
@@ -54,11 +64,11 @@ class NewPostPage extends Component {
               ))}
             </ScrollView>
           </View>
-          <AppTextInput icon='lead-pencil' placeholder='Title' />
-          <AppTextInput icon='currency-rupee' placeholder='Price' />
-          <AppTextInput icon='newspaper-variant-outline' placeholder='Description' />
-          <AppButton>Post</AppButton>
-          <Text style={styles.cancel}>Cancel</Text>
+          <AppTextInput icon='lead-pencil' placeholder='Title' onChangeText={(value)=>this.setState({title:value})} value={this.state.title} />
+          <AppTextInput icon='currency-rupee' placeholder='Price' keyboardType='numeric' onChangeText={(value)=>this.setState({subTitle:value})} value={this.state.subTitle} />
+          <AppTextInput icon='newspaper-variant-outline' placeholder='Description' multiline={true} onChangeText={(value)=>this.setState({description:value})} value={this.state.description} />
+          <AppButton onPress={()=>this.handleSubmit()}>Post</AppButton>
+          <Text onPress={()=>this.props.navigation.navigate('listingsPage')} style={styles.cancel}>Cancel</Text>
         </View>
       </PageLayout>
     );
@@ -69,7 +79,9 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10
   },
-  imagesContainer: {},
+  imagesContainer: {
+    marginBottom:10
+  },
   eachImage: {
     backgroundColor: rootCss.white,
     height: 100,
