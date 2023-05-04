@@ -3,8 +3,7 @@ import { FlatList, View } from 'react-native';
 import PageLayout from '../Components/PageLayout';
 import ListItem from '../Components/ListItem';
 import ListItemSeparetor from '../Components/ListItemSeparetor';
-import img from '../assets/jacket.jpg'
-import data from '../utilities/data';
+import {data} from '../utilities/data';
 
 
 class MessagesPage extends Component {
@@ -13,10 +12,10 @@ class MessagesPage extends Component {
             <PageLayout>
                 <View style={{ height: '100%' }}>
                     <FlatList
-                        data={data}
+                        data={data()}
                         keyExtractor={data => data.id}
                         renderItem={({ item }) => {
-                            return <ListItem title={item.title} subTitle={'Description'} image={item.image} onPress={() => console.log('clicked', item)} onDelete={() => console.log('deteted')} />
+                            return <ListItem title={item.title} subTitle={'Description'} image={item.image} uri={(item.uri)&&item.uri[0]} onPress={() => console.log('clicked', item)} onDelete={() => console.log('deteted')} />
                         }}
                         ItemSeparatorComponent={<ListItemSeparetor />}
                         refreshing={false}

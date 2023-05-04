@@ -6,7 +6,7 @@ import rootCss from '../rootCss';
 
 class ListItem extends Component {
     render() {
-        const { image, IconComponent, title, subTitle, onPress, onDelete } = this.props
+        const { image, IconComponent, title, subTitle, onPress, onDelete, uri } = this.props
 
         return (
             <Swipeable renderRightActions={() => <ListItemDeleteAction onDelete={onDelete} />}>
@@ -14,6 +14,7 @@ class ListItem extends Component {
                     <View style={styles.mainContainer}>
                         {IconComponent}
                         {image && <Image source={image} style={styles.image} />}
+                        {uri && <Image style={styles.image} source={{ uri: uri, width:'100%', height:250 }} />}
                         <View style={styles.textContainer} >
                             <Text style={styles.title} >{title}</Text>
                             {subTitle && <Text style={styles.subTitle} >{subTitle}</Text>}

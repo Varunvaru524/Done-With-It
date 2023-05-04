@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     textInput: {
         fontSize: 18,
         color: rootCss.darkGrey,
-        width:'100%',
+        width:'90%',
     }
 })
 
