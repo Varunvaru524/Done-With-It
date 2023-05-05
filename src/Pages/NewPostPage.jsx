@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback,Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback, Image, ScrollView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import * as imagePicker from 'expo-image-picker'
 import rootCss from '../rootCss';
 import PageLayout from '../Components/PageLayout';
 import AppTextInput from '../Components/AppTextInput';
 import AppButton from '../Components/AppButton';
-import {addData} from '../utilities/data'
+import { addData } from '../utilities/data'
 
 
 class NewPostPage extends Component {
   state = {
     permission: null,
     uri: [],
-    title:'',
-    subTitle:'',
-    description:'',
-    errors:null
+    title: '',
+    subTitle: '',
+    description: '',
+    errors: {
+      uri: '',
+      title: '',
+      subTitle: '',
+      description: ''
+    }
   }
 
   async handleImages() {
@@ -40,9 +45,35 @@ class NewPostPage extends Component {
     }
   }
 
-  handleSubmit(){
-    addData(this.state)
-      this.props.navigation.navigate('listingsPage')
+  handleValidation() {
+    let updatedErrors = {}
+
+    if (this.state.uri.length === 0) {
+      updatedErrors.uri = "Please select 1 image"
+      this.setState({ errors: updatedErrors })
+    }
+    if (this.state.title.length === 0) {
+      updatedErrors.title = 'Title cannot be empty'
+      this.setState({ errors: updatedErrors })
+    }
+    if (this.state.subTitle.length === 0) {
+      updatedErrors.subTitle = 'Price cannot be empty'
+      this.setState({ errors: updatedErrors })
+    }
+    if (this.state.description.length === 0) {
+      updatedErrors.description = 'Description cannot be empty'
+      this.setState({ errors: updatedErrors })
+    }
+    if (Object.keys(updatedErrors).length === 0) {
+      return true
+    }
+  }
+
+  handleSubmit() {
+    if (this.handleValidation()) {
+      addData(this.state)
+      this.props.navigation.navigate('home')
+    }
   }
 
   render() {
@@ -63,12 +94,16 @@ class NewPostPage extends Component {
                 </View>
               ))}
             </ScrollView>
+            {this.state.errors.uri && <Text style={styles.errors}>{this.state.errors.uri}</Text>}
           </View>
-          <AppTextInput icon='lead-pencil' placeholder='Title' onChangeText={(value)=>this.setState({title:value})} value={this.state.title} />
-          <AppTextInput icon='currency-rupee' placeholder='Price' keyboardType='numeric' onChangeText={(value)=>this.setState({subTitle:value})} value={this.state.subTitle} />
-          <AppTextInput icon='newspaper-variant-outline' placeholder='Description' multiline={true} onChangeText={(value)=>this.setState({description:value})} value={this.state.description} />
-          <AppButton onPress={()=>this.handleSubmit()}>Post</AppButton>
-          <Text onPress={()=>this.props.navigation.navigate('listingsPage')} style={styles.cancel}>Cancel</Text>
+          <AppTextInput icon='lead-pencil' placeholder='Title' onChangeText={(value) => this.setState({ title: value })} value={this.state.title} />
+          {this.state.errors.title && <Text style={styles.errors}>{this.state.errors.title}</Text>}
+          <AppTextInput icon='currency-rupee' placeholder='Price' keyboardType='numeric' onChangeText={(value) => this.setState({ subTitle: value })} value={this.state.subTitle} />
+          {this.state.errors.subTitle && <Text style={styles.errors}>{this.state.errors.subTitle}</Text>}
+          <AppTextInput icon='newspaper-variant-outline' placeholder='Description' multiline={true} onChangeText={(value) => this.setState({ description: value })} value={this.state.description} />
+          {this.state.errors.description && <Text style={styles.errors}>{this.state.errors.description}</Text>}
+          <AppButton onPress={() => this.handleSubmit()}>Post</AppButton>
+          <Text onPress={() => this.props.navigation.navigate('listingsPage')} style={styles.cancel}>Cancel</Text>
         </View>
       </PageLayout>
     );
@@ -80,7 +115,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   imagesContainer: {
-    marginBottom:10
+    marginBottom: 10
   },
   eachImage: {
     backgroundColor: rootCss.white,
@@ -91,6 +126,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 10,
     overflow: 'hidden'
+  },
+  errors: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '400',
+    color: rootCss.error
   },
   title: {
     fontSize: 25,

@@ -7,11 +7,17 @@ import {data} from '../utilities/data';
 
 
 class ListingsPage extends Component {
+    state={
+        data:[]
+    }
+    componentDidMount(){
+        this.setState({data:data()})
+    }
     render() {
         return (
             <PageLayout style={styles.container}>
                 <FlatList
-                    data={data()}
+                    data={this.state.data}
                     keyExtractor={item => item.id || 100}
                     refreshing={false}
                     onRefresh={()=>console.log('Refreshed')}
