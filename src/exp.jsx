@@ -1,5 +1,6 @@
 import React, { Component, useRef } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+import Lottieview from 'lottie-react-native'
 import PageLayout from './Components/PageLayout';
 import AccountPage from './Pages/AccountPage';
 import ListingDetailsPage from './Pages/ListingDetailsPage';
@@ -18,7 +19,9 @@ class Experimental extends Component {
 
     render() {
         return (
-                <TabNavigationRoute/>
+            <View style={{flex:1}}>
+                <Text>hello</Text>
+            </View>
         );
     }
 }

@@ -7,6 +7,8 @@ import PageLayout from '../Components/PageLayout';
 import AppTextInput from '../Components/AppTextInput';
 import AppButton from '../Components/AppButton';
 import { addData } from '../utilities/data'
+import { Modal } from 'react-native';
+import LottieView from 'lottie-react-native'
 
 
 class NewPostPage extends Component {
@@ -21,7 +23,8 @@ class NewPostPage extends Component {
       title: '',
       subTitle: '',
       description: ''
-    }
+    },
+    animation: false
   }
 
   async handleImages() {
@@ -72,8 +75,27 @@ class NewPostPage extends Component {
   handleSubmit() {
     if (this.handleValidation()) {
       addData(this.state)
-      this.props.navigation.navigate('home')
+      this.setState({ animation: true })
     }
+  }
+
+  handleAnimation() {
+    this.props.navigation.navigate('home')
+    const initialState = state = {
+      permission: null,
+      uri: [],
+      title: '',
+      subTitle: '',
+      description: '',
+      errors: {
+        uri: '',
+        title: '',
+        subTitle: '',
+        description: ''
+      },
+      animation: false
+    }
+    this.setState(initialState)
   }
 
   render() {
@@ -104,6 +126,16 @@ class NewPostPage extends Component {
           {this.state.errors.description && <Text style={styles.errors}>{this.state.errors.description}</Text>}
           <AppButton onPress={() => this.handleSubmit()}>Post</AppButton>
           <Text onPress={() => this.props.navigation.navigate('listingsPage')} style={styles.cancel}>Cancel</Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Modal visible={this.state.animation}>
+            <LottieView
+              onAnimationFinish={() => this.handleAnimation()}
+              autoPlay
+              loop={false}
+              source={require('../assets/animations/done.json')}
+            />
+          </Modal>
         </View>
       </PageLayout>
     );

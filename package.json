@@ -23,7 +23,9 @@
     "react-native-screens": "~3.20.0",
     "react-native-web": "~0.18.10",
     "expo-splash-screen": "~0.18.2",
-    "expo-image-picker": "~14.1.1"
+    "expo-image-picker": "~14.1.1",
+    "expo-updates": "~0.16.4",
+    "lottie-react-native": "5.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
