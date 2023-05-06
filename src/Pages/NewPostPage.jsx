@@ -127,16 +127,17 @@ class NewPostPage extends Component {
           <AppButton onPress={() => this.handleSubmit()}>Post</AppButton>
           <Text onPress={() => this.props.navigation.navigate('listingsPage')} style={styles.cancel}>Cancel</Text>
         </View>
-        <View style={{ flex: 1 }}>
-          <Modal visible={this.state.animation}>
+        <Modal visible={this.state.animation}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <LottieView
+              style={{ width: 150, height: 150 }}
               onAnimationFinish={() => this.handleAnimation()}
               autoPlay
               loop={false}
               source={require('../assets/animations/done.json')}
             />
-          </Modal>
-        </View>
+          </View>
+        </Modal>
       </PageLayout>
     );
   }
