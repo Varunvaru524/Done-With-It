@@ -12,24 +12,28 @@ For ios - [Click here](exp://u.expo.dev/update/f990b740-1323-478c-bb06-b97f74e45
 For Android - [Click here](exp://u.expo.dev/update/b48f4f73-7c4b-49a5-831b-37af80c85f6f)
 
 # Screenshots
-### Welcome screen
-![Welcome-screen](./src/assets/readme-images/Welcome-Screen.png)<br>
-### Login screen
-![Login-screen](./src/assets/readme-images/Login-Screen.png)
-### Register screen
-![Register-screen](./src/assets/readme-images/Registration-Screen.png)
-### Feed screen
-![Feed-screen](./src/assets/readme-images/Feed-Screen.png)
-### New Post screen
-![New-Post-screen](./src/assets/readme-images/New-Post-Screen.png)
-### New Post Validation
-![New-Post-Validation](./src/assets/readme-images/New-Post-Validation.png)
-### Account screen
-![Account-screen](./src/assets/readme-images/Account-Screen.png)
-### My Listings screen
-![My-Listings-screen](./src/assets/readme-images/My-Listings.png)
-### Messages screen
-![Messages-screen](./src/assets/readme-images/Messages-Screen.png)
+<center>
+<h3>Welcome screen</h3>
+<img src='./src/assets/readme-images/Welcome-Screen.png' style='width:250px; margin:auto'/><hr>
+<h3>Login screen</h3>
+<img src='./src/assets/readme-images/Login-Screen.png' style='width:250px; margin:auto'/><hr>
+<h3>Register screen</h3>
+<img src='./src/assets/readme-images/Registration-Screen.png' style='width:250px; margin:auto'/><hr>
+<h3>Feed Screen</h3>
+<img src='./src/assets/readme-images/Feed-Screen.png' style='width:250px; margin:auto'/><hr>
+<h3>New Post Screen</h3>
+<img src='./src/assets/readme-images/New-Post-Screen.png' style='width:250px; margin:auto'/><hr>
+<h3>New Post Validation</h3>
+<img src='./src/assets/readme-images/New-Post-Validation.png' style='width:250px; margin:auto'/><hr>
+<h3>Account screen</h3>
+<img src='./src/assets/readme-images/Account-Screen.png' style='width:250px; margin:auto'/><hr>
+<h3>My Listings screen</h3>
+<img src='./src/assets/readme-images/My-Listings.png' style='width:250px; margin:auto'/><hr>
+<h3>Messages Screen</h3>
+<img src='./src/assets/readme-images/Messages-Screen.png' style='width:250px; margin:auto'/>
+</center>
+
+
 
 
 # Features
