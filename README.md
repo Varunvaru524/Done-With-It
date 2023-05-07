@@ -5,11 +5,11 @@
 Done with it is only the front end application built with react native.
 
 # View the live app
-Before clicking the below links first you should install the expo go app from the [Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US) or [App store](https://apps.apple.com/us/app/expo-go/id982107779).
+First you should install the expo go app from the [Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US) or [App store](https://apps.apple.com/us/app/expo-go/id982107779), and copy paste the below links in expo go app.
 
-For ios - [Click here](exp://u.expo.dev/update/f990b740-1323-478c-bb06-b97f74e457ba)
+For ios - exp://u.expo.dev/update/f990b740-1323-478c-bb06-b97f74e457ba
 
-For Android - [Click here](exp://u.expo.dev/update/b48f4f73-7c4b-49a5-831b-37af80c85f6f)
+For Android - exp://u.expo.dev/update/b48f4f73-7c4b-49a5-831b-37af80c85f6f
 
 # Screenshots
 <center>
